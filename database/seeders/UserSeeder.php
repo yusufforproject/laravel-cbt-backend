@@ -16,10 +16,10 @@ class UserSeeder extends Seeder
         \App\Models\User::factory(10)->create();
 
         \App\Models\User::create([
-            'name' => 'Admin Bahri',
-            'email' => 'bahri@fic10.com',
-            'password' => Hash::make('12345678'),
-            'roles' => 'ADMIN',
+            'name' => 'Yusuf',
+            'email' => 'yusuf@fic10.com',
+            'password' => Hash::make('admin123'),
+            'roles' => 'admin',
             'phone' => '081234567890',
         ]);
     }
