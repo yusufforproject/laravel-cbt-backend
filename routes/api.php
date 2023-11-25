@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\UjianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,9 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+
+Route::post('/create-ujian', [UjianController::class, 'createUjian'])->middleware('auth:sanctum');
+
+Route::get('/get-soal-ujian', [UjianController::class, 'getListSoalByKategori'])->middleware('auth:sanctum');
+
+Route::post('/answers', [UjianController::class, 'jawabSoal'])->middleware('auth:sanctum');
